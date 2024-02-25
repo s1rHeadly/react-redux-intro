@@ -9,6 +9,8 @@ const initialState = {
 }
 
 
+
+// 1 account finances reducer
 const reducer = (state = initialState, action) => { // we need to set the state to the initual state unlike useReducer though this is the same concept
     switch (action.type) {
       
@@ -53,6 +55,8 @@ const reducer = (state = initialState, action) => { // we need to set the state 
 }
 
 
+
+// create the store
 const store = createStore(reducer);
 
 
@@ -109,8 +113,7 @@ function payLoan(){
 
 
 // 2. log the store to get all state values
-console.log(store.getState())
-
+console.log('redux store', store.getState())
 
 // 3. add action creators to the store
 store.dispatch(deposit(500)) // dispatch the deposit function to the store like this...
@@ -121,5 +124,4 @@ console.log(store.getState()) // then test it works again
 
 store.dispatch(payLoan());
 
-
-console.log(store.getState()) // then test it works again
+console.log('redux store updated', store.getState()) // then test it works again
